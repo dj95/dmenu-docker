@@ -1,6 +1,6 @@
 # dmenu-docker
 
-A script to launch docker container with dmenu.
+A script to start and stop docker container with dmenu.
 
 
 ### Requirements

@@ -6,6 +6,7 @@
 
 
 # imports
+import os
 import docker
 import subprocess
 
@@ -75,8 +76,9 @@ def stopDockerContainer(selected_container, containers):
 Show dmenu with the container names and return the selected result.
 '''
 def showDmenu(line):
+    exec_path = os.path.realpath(__file__).rstrip('dmenu-docker.py')
     # build the command array with the dmenu.sh and the dmenu line we generated
-    cmd = ['./dmenu.sh', line]
+    cmd = [exec_path + 'dmenu.sh', line]
 
     # start the process
     process = subprocess.Popen(cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
